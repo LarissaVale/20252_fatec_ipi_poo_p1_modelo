@@ -36,6 +36,7 @@ public class Terrorista {
         this.energia = Math.max(this.energia - energia, 0);
         // this.energia -= energia;
     }
+
     public void setMecanismoBomba(int energia) {
         this.energia = Math.max(this.energia - energia, 0);
         // this.energia -= energia;
@@ -43,7 +44,6 @@ public class Terrorista {
 
     public void setEnergiaPassaVez(int energia) {
         this.energia = Math.min(this.energia + energia, 10);
-
     }
 
     public void setResetaEnergia() {
@@ -51,7 +51,7 @@ public class Terrorista {
     }
 
     public void setResetaGranada() {
-        this.energia = 5;
+        this.quantidadeGranadas = 5;
     }
 
     public String getNome() {
@@ -65,6 +65,7 @@ public class Terrorista {
     public void setEnergiaGranada(int energia){
         this.energia = Math.max(this.energia - energia, 0);
     }
+
     public int getEnergiaGranada(){
         return energia;
     }
@@ -84,7 +85,7 @@ public class Terrorista {
     }
 
     public void atacar(String mapa) {
-        System.out.println(nome + " atacando com " + armamento + mapa);
+        System.out.println(nome + " atacando com " + armamento + " " + mapa);
     }
 
     public void passarAVez(String mapa) {

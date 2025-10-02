@@ -20,9 +20,8 @@ public class App {
         int p2Vence = 0;
         String mapa;
         int opcaoMapa;
-
-        opcaoMapa = Integer
-                .parseInt(JOptionPane.showInputDialog("Escolha um mapa para jogar\n0 = Roma   1 = Fatec Ipiranga"));
+        
+        opcaoMapa = Integer.parseInt(JOptionPane.showInputDialog("Escolha um mapa para jogar\n0 = Roma   1 = Fatec Ipiranga"));
 
         if (opcaoMapa == 0) {
             mapa = "em Roma";
@@ -34,12 +33,10 @@ public class App {
             opcaoMapa = Integer.parseInt(JOptionPane.showInputDialog("ZERO = Roma    UM = Fatec Ipiranga"));
         }
 
-        rodada = Integer.parseInt(
-                JOptionPane.showInputDialog("Digite um número impar de 1 a 20 que definirá a quantidade de rodadas"));
+        rodada = Integer.parseInt(JOptionPane.showInputDialog("Digite um número impar de 1 a 20 que definirá a quantidade de rodadas"));
 
         while (rodada % 2 == 0 || rodada <= 0 || rodada >= 20) {
-            rodada = Integer.parseInt(JOptionPane
-                    .showInputDialog("Digite UM número ÍMPAR de UM a VINTE que definirá a quantidade de rodadas"));
+            rodada = Integer.parseInt(JOptionPane.showInputDialog("Digite UM número ÍMPAR de UM a VINTE que definirá a quantidade de rodadas"));
         }
 
         for (int i = 0; i < rodada; i++) {
@@ -51,6 +48,7 @@ public class App {
                 primeiro = gerador.nextInt(2) + 1;
                 arma = gerador.nextInt(3) + 1;
                 recuperar = gerador.nextInt(2) + 1;
+                danoGranada = gerador.nextInt(6) + 1;
 
                 if (arma == 1) {
                     p1.setArmamento("Faca");
@@ -60,7 +58,6 @@ public class App {
                     p1.setArmamento("Fuzil");
                 }
 
-                danoGranada = gerador.nextInt(6) + 1;
                 switch (acao) {
                     case 1:
                         if (primeiro == 1) {
@@ -70,10 +67,8 @@ public class App {
                                 p2.setEnergiaAtaque(1);
                             } else if (p1.getArmamento() == "Pistola") {
                                 p2.setEnergiaAtaque(2);
-
                             } else if (p1.getArmamento() == "Fuzil") {
                                 p2.setEnergiaAtaque(3);
-
                             }
                             break;
                         } else {
@@ -81,10 +76,8 @@ public class App {
                             primeiro--;
                             if (p2.getArmamento() == "Faca") {
                                 p1.setEnergiaAtaque(1);
-                                ;
                             } else if (p2.getArmamento() == "Pistola") {
                                 p1.setEnergiaAtaque(2);
-
                             } else if (p2.getArmamento() == "Fuzil") {
                                 p1.setEnergiaAtaque(3);
                             }
@@ -102,7 +95,6 @@ public class App {
                             p1.setEnergiaGranada(danoGranada);
                             primeiro--;
                             break;
-
                         }
 
                     case 3:
@@ -116,7 +108,6 @@ public class App {
                             primeiro--;
                             armarBomba = 1;
                             break;
-
                         }
 
                     case 4:
@@ -132,10 +123,13 @@ public class App {
                             break;
                         }
                 }
+
                 System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+
                 arma = gerador.nextInt(3) + 1;
                 recuperar = gerador.nextInt(2) + 1;
                 acao = gerador.nextInt(4) + 1;
+                danoGranada = gerador.nextInt(6) + 1;
 
                 if (arma == 1) {
                     p2.setArmamento("Faca");
@@ -144,7 +138,6 @@ public class App {
                 } else {
                     p2.setArmamento("Fuzil");
                 }
-                danoGranada = gerador.nextInt(6) + 1;
 
                 switch (acao) {
                     case 1:
@@ -158,7 +151,6 @@ public class App {
 
                             } else {
                                 p2.setEnergiaAtaque(3);
-
                             }
                             break;
                         } else {
@@ -168,7 +160,6 @@ public class App {
                                 p1.setEnergiaAtaque(1);
                             } else if (p2.getArmamento() == "Pistola") {
                                 p1.setEnergiaAtaque(2);
-
                             } else {
                                 p1.setEnergiaAtaque(3);
                             }
@@ -186,7 +177,6 @@ public class App {
                             p2.lancarGranada(danoGranada, mapa);
                             primeiro--;
                             break;
-
                         }
 
                     case 3:
@@ -200,7 +190,6 @@ public class App {
                             primeiro--;
                             armarBomba = 1;
                             break;
-
                         }
 
                     case 4:
@@ -227,8 +216,7 @@ public class App {
                 }
 
                 System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
-                System.out.printf("ENERGIA %s = %d  ENERGIA %s = %d\n", p1.getNome(), p1.getEnergia(), p2.getNome(),
-                        p2.getEnergia());
+                System.out.printf("ENERGIA %s = %d  ENERGIA %s = %d\n", p1.getNome(), p1.getEnergia(), p2.getNome(), p2.getEnergia());
                 System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++\n");
                 Thread.sleep(1000);
 
@@ -240,22 +228,19 @@ public class App {
                     p1Vence++;
                 }
             }
+
             p1.setResetaEnergia();
             p1.setResetaGranada();
             p2.setResetaEnergia();
             p2.setResetaGranada();
-
         }
+
         if (p1Vence > p2Vence) {
-            System.out.println(
-                    p1.getNome() + " venceu a partida com " + p1Vence + " vitória(s) e " + p2Vence + " derrota(s)! ");
-            System.out.println(
-                    p2.getNome() + " perdeu a partida com " + p1Vence + " derrota(s) e " + p2Vence + " vitória(s)! ");
+            System.out.println(p1.getNome() + " venceu a partida com " + p1Vence + " vitória(s) e " + p2Vence + " derrota(s)! ");
+            System.out.println(p2.getNome() + " perdeu a partida com " + p1Vence + " derrota(s) e " + p2Vence + " vitória(s)! ");
         } else {
-            System.out.println(
-                    p2.getNome() + " venceu a partida com " + p2Vence + " vitória(s) e " + p1Vence + " derrota(s)! ");
-            System.out.println(
-                    p1.getNome() + " perdeu a partida com " + p2Vence + " derrota(s) e " + p1Vence + " vitória(s)! ");
+            System.out.println(p2.getNome() + " venceu a partida com " + p2Vence + " vitória(s) e " + p1Vence + " derrota(s)! ");
+            System.out.println(p1.getNome() + " perdeu a partida com " + p2Vence + " derrota(s) e " + p1Vence + " vitória(s)! ");
         }
     }
 }

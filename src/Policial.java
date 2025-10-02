@@ -49,7 +49,7 @@ public class Policial {
     }
 
     public void setResetaGranada() {
-        this.energia = 5;
+        this.quantidadeGranadas = 5;
     }
 
     public String getNome() {
@@ -59,13 +59,14 @@ public class Policial {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public void setEnergiaGranada(int energia){
         this.energia = Math.max(this.energia - energia, 0);
     }
+
     public int getEnergiaGranada(){
         return energia;
     }
-
 
     public int desarmarBomba(String mapa) {
         System.out.println(nome + " desarmando bomba " + mapa);
@@ -82,7 +83,7 @@ public class Policial {
     }
 
     public void atacar(String mapa) {
-        System.out.println(nome + " atacando com " + armamento + mapa);
+        System.out.println(nome + " atacando com " + armamento + " " + mapa);
     }
 
     public void passarAVez(String mapa) {
