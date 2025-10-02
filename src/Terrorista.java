@@ -75,7 +75,7 @@ public class Terrorista {
         return 1;
     }
 
-    public void lancarGranada(int danoGranada,String mapa) {
+    public void lancarGranada(int danoGranada, String mapa) {
         if (quantidadeGranadas > 0) {
             System.out.println(nome + " lançando granada (" + danoGranada + ") " + mapa);
             quantidadeGranadas--;

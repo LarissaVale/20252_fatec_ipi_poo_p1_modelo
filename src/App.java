@@ -52,10 +52,13 @@ public class App {
 
                 if (arma == 1) {
                     p1.setArmamento("Faca");
+                    p2.setArmamento("Faca");
                 } else if (arma == 2) {
                     p1.setArmamento("Pistola");
+                    p2.setArmamento("Pistola");
                 } else {
                     p1.setArmamento("Fuzil");
+                    p2.setArmamento("Fuzil");
                 }
 
                 switch (acao) {
@@ -133,10 +136,13 @@ public class App {
 
                 if (arma == 1) {
                     p2.setArmamento("Faca");
+                    p1.setArmamento("Faca");
                 } else if (arma == 2) {
                     p2.setArmamento("Pistola");
+                    p1.setArmamento("Pistola");
                 } else {
                     p2.setArmamento("Fuzil");
+                    p1.setArmamento("Fuzil");
                 }
 
                 switch (acao) {

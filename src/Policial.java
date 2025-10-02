@@ -35,6 +35,7 @@ public class Policial {
         this.energia = Math.max(this.energia - energia, 0);
         // this.energia -= energia;
     }
+    
     public void setMecanismoBomba(int energia) {
         this.energia = Math.max(this.energia - energia, 0);
         // this.energia -= energia;
